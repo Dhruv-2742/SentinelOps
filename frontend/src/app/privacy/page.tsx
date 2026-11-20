@@ -6,10 +6,11 @@ export default function PrivacyArchitecturePage() {
     <div className="min-h-screen bg-[#0a0e1a] text-white">
       <nav className="h-20 border-b border-[#1a2236] px-8 max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00d2ff] to-[#3b82f6] flex items-center justify-center">
-            <ShieldCheck className="w-5 h-5 text-black" />
-          </div>
-          <span className="font-bold text-lg text-white">Sentinel<span className="text-[#00d2ff]">Ops</span></span>
+          <img
+            src="/logo-banner.png"
+            alt="SentinelOps Logo"
+            className="h-10 w-auto object-contain drop-shadow-[0_0_15px_rgba(139,92,246,0.3)]"
+          />
         </Link>
         <div className="flex items-center gap-6 text-sm text-gray-400">
           <Link href="/features" className="hover:text-white">Features</Link>

@@ -36,18 +36,14 @@ export function Sidebar() {
   return (
     <aside className="w-64 bg-[#0F172A] border-r border-[#1E293B] flex flex-col h-screen fixed left-0 top-0 z-40 select-none">
       {/* Brand Header */}
-      <div className="h-16 flex items-center px-6 border-b border-[#1E293B] gap-3">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
-          <Shield className="w-4 h-4 text-white" />
-        </div>
-        <div>
-          <span className="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
-            Sentinel<span className="text-blue-400">Ops</span>
-          </span>
-          <span className="block text-[9px] text-blue-400 font-mono tracking-wider font-semibold -mt-0.5">
-            ENTERPRISE AIOPS
-          </span>
-        </div>
+      <div className="h-16 flex items-center px-4 border-b border-[#1E293B]">
+        <Link href="/dashboard" className="flex items-center gap-2.5 w-full">
+          <img
+            src="/logo-banner.png"
+            alt="SentinelOps"
+            className="h-9 w-auto max-w-[210px] object-contain drop-shadow-[0_0_12px_rgba(139,92,246,0.3)]"
+          />
+        </Link>
       </div>
 
       {/* Nav List */}

@@ -17,19 +17,13 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#0a0e1a] text-white">
       {/* Top Header */}
       <nav className="h-20 border-b border-[#1a2236] px-8 max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d2ff] to-[#3b82f6] flex items-center justify-center shadow-lg shadow-cyan-500/20">
-            <ShieldCheck className="w-6 h-6 text-black" />
-          </div>
-          <div>
-            <span className="font-bold text-xl tracking-tight text-white">
-              Sentinel<span className="text-[#00d2ff]">Ops</span>
-            </span>
-            <span className="block text-[10px] text-gray-400 font-mono tracking-wider -mt-0.5">
-              OBSERVE LOCALLY. UNDERSTAND GLOBALLY.
-            </span>
-          </div>
-        </div>
+        <Link href="/" className="flex items-center gap-3">
+          <img
+            src="/logo-banner.png"
+            alt="SentinelOps Logo"
+            className="h-11 w-auto object-contain drop-shadow-[0_0_15px_rgba(139,92,246,0.35)]"
+          />
+        </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
           <Link href="/features" className="hover:text-cyan-400 transition-colors">Features</Link>

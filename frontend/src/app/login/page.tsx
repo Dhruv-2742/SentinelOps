@@ -33,10 +33,11 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-[#0a0e1a] text-white flex flex-col justify-center items-center px-4">
       <Link href="/" className="flex items-center gap-3 mb-8">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d2ff] to-[#3b82f6] flex items-center justify-center">
-          <ShieldCheck className="w-6 h-6 text-black" />
-        </div>
-        <span className="font-bold text-2xl text-white">Sentinel<span className="text-[#00d2ff]">Ops</span></span>
+        <img
+          src="/logo-banner.png"
+          alt="SentinelOps Logo"
+          className="h-14 w-auto object-contain drop-shadow-[0_0_20px_rgba(139,92,246,0.45)]"
+        />
       </Link>
 
       <div className="w-full max-w-md p-8 rounded-2xl bg-[#0f1629] border border-[#1a2236] shadow-2xl">
