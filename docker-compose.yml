@@ -1,0 +1,65 @@
+version: "3.8"
+
+services:
+  # 1. Central SaaS Backend (Tier 2 Cloud)
+  saas-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: sentinelops-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - SAAS_HOST=0.0.0.0
+      - SAAS_PORT=8000
+      - SAAS_DATABASE_URL=sqlite:///./data/saas/sentinelops.db
+      - SAAS_MASTER_API_KEY=dev-master-key
+      - SAAS_HMAC_SECRET=dev-hmac-secret
+    volumes:
+      - saas_data:/app/data/saas
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # 2. Next.js SaaS Enterprise Dashboard
+  saas-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sentinelops-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+    depends_on:
+      - saas-backend
+    restart: unless-stopped
+
+  # 3. Tier 1 Local Telemetry Collector (Simulated Customer VPC Node)
+  local-collector:
+    build:
+      context: .
+      dockerfile: Dockerfile.collector
+    container_name: sentinelops-local-collector
+    environment:
+      - SENTINEL_COLLECTOR_ID=collector-docker-01
+      - SENTINEL_TENANT_ID=sentinelops-corp
+      - SENTINEL_SAAS_ENDPOINT=http://saas-backend:8000
+      - SENTINEL_API_KEY=sntl_live_demo_key_77a92b3c4d5e6f
+      - SENTINEL_HMAC_SECRET=dev-hmac-secret
+      - SENTINEL_COLLECTION_INTERVAL=5
+      - SENTINEL_EGRESS_INTERVAL=15
+      - SENTINEL_SIMULATION_MODE=normal
+    volumes:
+      - collector_data:/app/data/collector
+    depends_on:
+      saas-backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  saas_data:
+  collector_data:

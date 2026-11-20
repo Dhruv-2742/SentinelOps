@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "sentinelops"
+version = "0.1.0"
+description = "Privacy-first, AI-powered, two-tier SaaS observability platform"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "SentinelOps Team", email = "engineering@sentinelops.io" }
+]
+dependencies = [
+    # Shared
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    
+    # Collector
+    "psutil>=5.9.0",
+    "click>=8.1.0",
+    "scikit-learn>=1.3.0",
+    "numpy>=1.26.0",
+    "httpx>=0.25.0",
+    
+    # SaaS Backend
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "sqlalchemy>=2.0.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-multipart>=0.0.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "httpx>=0.25.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+sentinel-collector = "collector.cli:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "collector/tests", "saas/tests"]
+pythonpath = ["."]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
