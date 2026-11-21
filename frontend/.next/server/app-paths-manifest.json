@@ -1,24 +1,8 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/features/page": "app/features/page.js",
-  "/how-it-works/page": "app/how-it-works/page.js",
-  "/privacy/page": "app/privacy/page.js",
-  "/login/page": "app/login/page.js",
-  "/page": "app/page.js",
-  "/register/page": "app/register/page.js",
-  "/dashboard/collectors/page": "app/dashboard/collectors/page.js",
-  "/dashboard/anomalies/page": "app/dashboard/anomalies/page.js",
   "/dashboard/incidents/page": "app/dashboard/incidents/page.js",
-  "/dashboard/alerts/page": "app/dashboard/alerts/page.js",
-  "/dashboard/governance/page": "app/dashboard/governance/page.js",
-  "/dashboard/metrics/page": "app/dashboard/metrics/page.js",
-  "/dashboard/services/page": "app/dashboard/services/page.js",
-  "/dashboard/aiops/page": "app/dashboard/aiops/page.js",
-  "/dashboard/infrastructure/page": "app/dashboard/infrastructure/page.js",
-  "/dashboard/predictions/page": "app/dashboard/predictions/page.js",
   "/dashboard/settings/page": "app/dashboard/settings/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/rca/page": "app/dashboard/rca/page.js",
-  "/dashboard/integrations/page": "app/dashboard/integrations/page.js"
+  "/dashboard/integrations/page": "app/dashboard/integrations/page.js",
+  "/dashboard/governance/page": "app/dashboard/governance/page.js",
+  "/dashboard/collectors/page": "app/dashboard/collectors/page.js",
+  "/dashboard/aiops/page": "app/dashboard/aiops/page.js"
 }
