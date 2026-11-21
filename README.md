@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 🛡️ SentinelOps
 
 > **Tagline:** *Observe Locally. Understand Globally.*  
@@ -144,6 +145,9 @@ pytest -v
 
 ## 📜 License
 Apache 2.0. Copyright (c) 2026 SentinelOps Contributors.
+=======
+# SentinelOps
+>>>>>>> 164d149df593da29daf491ef7f971d0447902dd5
 =======
 # SentinelOps
 >>>>>>> 164d149df593da29daf491ef7f971d0447902dd5
