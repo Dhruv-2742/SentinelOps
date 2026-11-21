@@ -21,7 +21,7 @@ SYNTHETIC_SENSITIVE_ITEMS = [
     ("credit_card", "4111-2222-3333-4444"),
     ("ssn", "987-65-4321"),
     ("jwt", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.doNotLeakThisToken"),
-    ("api_key", "sk_live_99887766554433221100aabbccddeeff"),
+    ("stripe_key", "dummy_stripe_test_placeholder"),
     ("bearer", "Bearer eyJhbGciOiJIUzI1NiJ9.secretpayload.xyz"),
     ("db_password", "postgres://admin:SuperSecretP@ssw0rd!@db:5432/production"),
 ]
