@@ -1,0 +1,18 @@
+# Dependencies
+frontend/node_modules/
+backend/.venv/
+.venv/
+
+# Environment files
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+__pycache__/
+*.pyc
+.env
